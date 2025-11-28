@@ -60,3 +60,13 @@ UI Tests (Acceptance tests / UI tests / End to End tests) :
 8) Some UI tests on Web / React, for verification and test coverage, but those tests are expensive to write and slow so not ideal to catch bugs like number "10"
 
 
+React Next JS:
+I would have this structure : 
+1) entity-type.ts for typescript types
+2) entity-query-keys.ts for keys (for Tanstack Query)
+3) entity-service-interface.ts & entity-service.ts for the GetApi call - using the result pattern like C# ErrorOr, in the service layer, e.g. Promise<ApiResult<TechnologyResponse>>;
+4) use-entity.ts for ReactQuery, that would use the service, with a custom function that would return either Data or throw an Error
+e.g. queryFn: async () => ensureApiSuccess(await technologyService.getAll()),
+5) If there were forms I would use Zod & React Hook Forms but not needed for this test
+6) Create components, referencing the use-entity.ts
+7) Create page
