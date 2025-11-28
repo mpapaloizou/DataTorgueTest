@@ -1,4 +1,7 @@
-﻿Notes : 
+Other : 
+1) Convert this ReadMe.txt file to ReadMe.md 
+
+Notes : 
 1) For Requests / Responses I am using "records" and "init" for immutability (so that DTO's do not change after creation)
 2) Using 'Result Pattern' (Design pattern) in OpenWeatherService - ErrorOr is one library that implements it
 3) Trying to use the 'Return Early' (Design pattern) and return errors early if any, and the (successful) result in the last line, so it is consistent and easy to read / know what to expect
@@ -7,9 +10,6 @@
 
 
 Enchasments / Improvements that I would do if I invested more time :
-
-Other : 
-1) Convert this ReadMe.txt file to ReadMe.md 
 
 API :
 1) Logger & Open telemetry to log errors for observability
