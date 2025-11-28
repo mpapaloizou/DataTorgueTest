@@ -1,6 +1,3 @@
-Other : 
-1) Convert this ReadMe.txt file to ReadMe.md 
-
 Notes : 
 1) For Requests / Responses I am using "records" and "init" for immutability (so that DTO's do not change after creation)
 2) Using 'Result Pattern' (Design pattern) in OpenWeatherService - ErrorOr is one library that implements it
@@ -10,6 +7,9 @@ Notes :
 
 
 Enchasments / Improvements that I would do if I invested more time :
+
+Other : 
+1) Convert this ReadMe.txt file to ReadMe.md 
 
 API :
 1) Logger & Open telemetry to log errors for observability
@@ -54,7 +54,19 @@ Tests (API + Unit):
 7) Decide whether the tests should use CustomWebApplicationFactory or not - up to the Seniors / Team leader
       - I think that if we do not use CustomWebApplicationFactory then the environment is closer to production, but I might be wrong
 
+
 UI Tests (Acceptance tests / UI tests / End to End tests) :
+
 8) Some UI tests on Web / React, for verification and test coverage, but those tests are expensive to write and slow so not ideal to catch bugs like number "10"
 
 
+React Next JS:
+I would have this structure : 
+1) entity-type.ts for typescript types
+2) entity-query-keys.ts for keys (for Tanstack Query)
+3) entity-service-interface.ts & entity-service.ts for the GetApi call - using the result pattern like C# ErrorOr, in the service layer, e.g. Promise<ApiResult<TechnologyResponse>>;
+4) use-entity.ts for ReactQuery, that would use the service, with a custom function that would return either Data or throw an Error
+e.g. queryFn: async () => ensureApiSuccess(await technologyService.getAll()),
+5) If there were forms I would use Zod & React Hook Forms but not needed for this test
+6) Create components, referencing the use-entity.ts
+7) Create page
