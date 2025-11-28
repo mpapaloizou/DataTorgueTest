@@ -54,7 +54,9 @@ Tests (API + Unit):
 7) Decide whether the tests should use CustomWebApplicationFactory or not - up to the Seniors / Team leader
       - I think that if we do not use CustomWebApplicationFactory then the environment is closer to production, but I might be wrong
 
+
 UI Tests (Acceptance tests / UI tests / End to End tests) :
+
 8) Some UI tests on Web / React, for verification and test coverage, but those tests are expensive to write and slow so not ideal to catch bugs like number "10"
 
 
